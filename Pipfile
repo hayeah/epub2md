@@ -10,6 +10,7 @@ html2text = "*"
 fastapi = "*"
 uvicorn = "*"
 python-multipart = "*"
+aiohttp = "*"
 
 [dev-packages]
 
