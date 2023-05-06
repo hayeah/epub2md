@@ -66,6 +66,12 @@ async def upload_epub(file: UploadFile = None, url: str = None):
         temp_file, filename = await download_from_url(url)
         return await process_epub(temp_file, filename)
 
+@app.get("/")
+async def get_readme():
+    with open("README.md", "r") as readme_file:
+        content = readme_file.read()
+    return Response(content=content, media_type="text/markdown")
+
 def cli():
     parser = argparse.ArgumentParser(description='Convert EPUB file to plain text.')
     parser.add_argument('input_file', help='path to input EPUB file')
