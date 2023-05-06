@@ -22,6 +22,7 @@ def epub_to_text(epub_file_path: str):
 
 
 from fastapi import FastAPI, UploadFile, HTTPException, Response
+from fastapi.responses import RedirectResponse
 from tempfile import NamedTemporaryFile
 
 app = FastAPI()
@@ -68,9 +69,7 @@ async def upload_epub(file: UploadFile = None, url: str = None):
 
 @app.get("/")
 async def get_readme():
-    with open("README.md", "r") as readme_file:
-        content = readme_file.read()
-    return Response(content=content, media_type="text/markdown")
+    return RedirectResponse(url="https://github.com/hayeah/epub2md", status_code=303)
 
 def cli():
     parser = argparse.ArgumentParser(description='Convert EPUB file to plain text.')
