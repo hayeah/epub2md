@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ebooklib = "*"
+beautifulsoup4 = "*"
+html2text = "*"
+fastapi = "*"
+uvicorn = "*"
+python-multipart = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
