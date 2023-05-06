@@ -64,16 +64,12 @@ Example:
 curl -X POST "http://localhost:8000/upload?url=https%3A%2F%2Fwww.gutenberg.org%2Febooks%2F11.epub.noimages" -o "alice.md"
 ```
 
+# Production
+
+```
+curl -X POST "https://epub2md.vercel.app/upload?url=https%3A%2F%2Fwww.gutenberg.org%2Febooks%2F11.epub.noimages" -o "alice.md"
+```
+
 ## License
 
 This project is licensed under the terms of the MIT License.
-
-# production
-
-```
-curl -X POST -F "file=@alice-in-wonderland.epub" https://epub2md.vercel.app/upload
-
-curl -X POST -F "file=@alice-in-wonderland.epub" https://epub2md-hayeah.vercel.app/upload
-
-
-```
